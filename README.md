@@ -1,45 +1,42 @@
-# Airdrop Hunter
+# Uniswap Interactor
+ 
+ ## About
+This repository includes web3 scripts that interact with Uniswap on the Goerli testnet, which can be modified to work with other decentralized exchanges (DEXs) and networks. Additionally, it enables connection to a Netlify cloud, which permits transactions to be executed periodically. The scripts can be adjusted to function on other DEXs and networks.
 
-## Technology Stack & Tools
 
-- Solidity (Writing Smart Contract)
-- Javascript (React & Testing)
-- [Ethers.js](https://docs.ethers.io/v5/) (Blockchain Interaction)
-- [Alchemy](https://www.alchemy.com/) (Blockchain Connection)
+Currently, the network being used is Goerli. To use a different network, use the RPC URL of the desired network and modify parameters like the Goerli WETH and USDC addresses.
+
+The current DEX being utilized is Uniswap. If you want to use a different DEX, make sure to install their ABI packages or copy their ABI into a separate JSON file.
+
+## Requirements and Tools
+
+
+- [Ethers.js](https://docs.ethers.io/v5/)
+- [Alchemy](https://www.alchemy.com/) 
 - [Netlify](https://www.netlify.com/) (Cloud Service)
-
-## Requirements For Initial Setup
 - Install [NodeJS](https://nodejs.org/en/). We recommend using the latest LTS (Long-Term-Support) version, and preferably installing NodeJS via [NVM](https://github.com/nvm-sh/nvm#intro).
 - Create an [Alchemy](https://www.alchemy.com/) account, you'll need to create an API key, and use the Goerli RPC URL for testing.
 - Create a [Netlify](https://www.netlify.com/) account.
 
 ## Setting Up
-### 1. Clone/Download the Repository
+### 1. Clone Repo
 
-### 2. Create a GitHub Repository
-Create a GitHub repository at [https://github.com/new](https://github.com/new).
+```
+git clone https://github.com/yandmch/Uniswap-Interactor.git
+```
 
-### 3. Connect to GitHub Repository
-In your terminal, execute:
-`git remote set-url origin <GIT_URL>`
+### 2. Create a GitHub Repository and push repo
 
-For the **GIT_URL**, this will be the .git link to your personal repository on GitHub.
 
-### 4. Push to GitHub Repository
-In your terminal, execute:
-`git push origin master`
-
-### 5. Login to Netlify
+### 3. Login to Netlify
 Once logged in to Netlify, under the **Team overview** tab, scroll down to **Sites** and click on **Import from Git**
 
 Connect to your GitHub account, select the repository you created, and click **Deploy site**
 
-### 6. Configure Environment Variables
+### 5. Configure Environment Variables
 While looking at the site's configuration, at the top tab, click on **Site settings**.
 
 On the sidebar, click on **Environment variables**, then click on **Add a variable**.
-
-Here you can add an environment variable, you'll need to add 9 variables:
 
 - **RPC_URL=""** (Alchemy RPC URL)
 
@@ -53,6 +50,3 @@ Here you can add an environment variable, you'll need to add 9 variables:
 
 - **V2_ROUTER_ADDRESS="0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D"** (Uniswap V2 Router on Goerli)
 - **SWAP_AMOUNT="25000000000000000"** (0.025 ETH)
-
-### Note
-If you've set the environment variables after deployment has finished you may want to redeploy. Under the **Deploys** tab, you'll see a list of previous deploys done, there should be a drop down titled **Trigger deploy**. Click on the dropdown, and select the **Clear cache and deploy site** to redeploy the site.
