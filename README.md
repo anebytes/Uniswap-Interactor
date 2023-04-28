@@ -93,7 +93,7 @@ w** tab, scroll down to **Sites** and click on **Import from Git**
 
 Connect to your GitHub account, select the repository you created, and click **Deploy site**
 
-### 5. Configure Environment Variables
+### 3. Configure Environment Variables
 While looking at the site's configuration, at the top tab, click on **Site settings**.
 
 On the sidebar, click on **Environment variables**, then click on **Add a variable**.
